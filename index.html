@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meelad Special - Ultimate Programs & Resources Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Amiri:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #06241b;
+            --primary-green: #0d4732;
+            --light-green: #146c43;
+            --accent-gold: #c59b27;
+            --bg-body: #f8fdf9;
+            --text-dark: #05140e;
+            --text-light: #ffffff;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            font-family: 'Outfit', sans-serif;
+            color: var(--text-dark);
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--primary-dark);
+            border-bottom: 2px solid var(--accent-gold);
+            padding: 12px 0;
+        }
+        .navbar-brand {
+            font-weight: 800;
+            color: var(--text-light);
+            font-size: 1.4rem;
+        }
+        .navbar-brand span {
+            color: var(--accent-gold);
+        }
+        .nav-link {
+            color: var(--text-light) !important;
+            font-weight: 600;
+            margin-left: 10px;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: var(--accent-gold) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-green) 100%);
+            padding: 80px 0;
+            color: var(--text-light);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-title {
+            font-weight: 800;
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+        .hero-title span {
+            color: var(--accent-gold);
+        }
+        .hero-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            max-width: 550px;
+            margin-bottom: 30px;
+        }
+        .btn-hero {
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+            font-weight: 700;
+            padding: 14px 32px;
+            border-radius: 50px;
+            border: none;
+            box-shadow: 0 8px 20px rgba(197, 155, 39, 0.3);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .btn-hero:hover {
+            transform: translateY(-2px);
+            background-color: #e0ac1b;
+            color: var(--primary-dark);
+        }
+        .hero-img-container {
+            position: relative;
+        }
+        .hero-img {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border: 3px solid rgba(197, 155, 39, 0.3);
+        }
+
+        /* Programs Section */
+        .section-title {
+            font-weight: 800;
+            color: var(--primary-green);
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 3px;
+            background-color: var(--accent-gold);
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+        
+        .program-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid rgba(13, 71, 50, 0.1);
+            padding: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            height: 100%;
+        }
+        .program-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 32px rgba(13, 71, 50, 0.1);
+            border-color: var(--light-green);
+        }
+        .card-icon-wrapper {
+            font-size: 2.2rem;
+            color: var(--light-green);
+            margin-bottom: 15px;
+        }
+        .program-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+        }
+        .btn-level {
+            width: 100%;
+            background: #f1f7f4;
+            color: var(--primary-green);
+            font-weight: 600;
+            border: 1px solid rgba(13, 71, 50, 0.15);
+            margin-bottom: 8px;
+            border-radius: 8px;
+            padding: 8px 12px;
+            transition: all 0.2s;
+        }
+        .btn-level:hover {
+            background: var(--primary-green);
+            color: var(--text-light);
+            border-color: var(--primary-green);
+        }
+
+        /* Hearing Section */
+        .hearing-card {
+            background: linear-gradient(135deg, #0d4732 0%, #06241b 100%);
+            color: var(--text-light);
+            border-radius: 20px;
+            padding: 40px 20px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            box-shadow: 0 12px 30px rgba(9, 39, 29, 0.2);
+        }
+        .hearing-icon {
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+        }
+        .audio-player {
+            max-width: 500px;
+            margin: 20px auto 0 auto;
+            filter: invert(0.1);
+        }
+
+        /* Advertisements Section */
+        .ad-card {
+            background: var(--card-bg);
+            border-left: 5px solid var(--accent-gold);
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+            height: 100%;
+            transition: transform 0.2s;
+        }
+        .ad-card:hover {
+            transform: translateX(4px);
+        }
+        .ad-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-green);
+        }
+        .ad-desc {
+            font-size: 0.85rem;
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            padding: 40px 0 20px;
+            border-top: 1px solid rgba(197, 155, 39, 0.2);
+        }
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin: 0 12px;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover {
+            color: var(--accent-gold);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fa-solid fa-moon me-2" style="color: var(--accent-gold);"></i>Meelad<span>Special</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#programs-section"><i class="fa-solid fa-list-check me-1"></i> Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hearing-section"><i class="fa-solid fa-circle-play me-1"></i> Hearing</a>
+                           <li class="nav-item">
+                        <a class="nav-link" href="#ads-section"><i class="fa-solid fa-star me-1"></i> Sponsors</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <h1 class="hero-title">Celebrate Meelad: <br> <span>A Journey of Light</span> & Knowledge</h1>
+                    <p class="hero-subtitle">Empowering students through the Prophetic Legacy with high-quality study materials and comprehensive resources.</p>
+                    <a href="#programs-section" class="btn btn-hero">GET PROGRAMS PDF</a>
+                </div>
+                <div class="col-lg-6 text-lg-end text-center">
+                    <a href="https://www.linkedin.com/in/sakheer-pa-01791a320?utm_source=share_via&utm_content=profile&utm_medium=member_android"><img src="madrassa.jpg" alt="Students celebrating" class="hero-img"></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="programs-section" class="container py-5 text-center">
+        <h2 class="section-title">Programs & Resources</h2>
+        
+        <div class="row g-4 mt-3 justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="program-card">
+                    <div class="card-icon-wrapper"><i class="fa-solid fa-microphone-lines"></i></div>
+                    <div class="program-title">Speech</div>
+                    <button class="btn btn-level" onclick="downloadPdf('Speech', 'Senior')"><a href="https://www.islamicfinder.org/world/india/1273874/kochi-prayer-times/">Senior</a></button>
+                    <button class="btn btn-level" onclick="downloadPdf('Speech', 'Junior')">Junior</button>
+                    <button class="btn btn-level" onclick="downloadPdf('Speech', 'Sub-Junior')">Sub-Junior / Kids</button>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="program-card">
+                    <div class="card-icon-wrapper"><i class="fa-solid fa-music"></i></div>
+                    <div class="program-title">Song</div>
+                    <button class="btn btn-level" onclick="downloadPdf('Song', 'Senior')">Senior</button>
+                    <button class="btn btn-level" onclick="downloadPdf('Song', 'Junior')">Junior</button>
+                    <button class="btn btn-level" onclick="downloadPdf('Song', 'Sub-Junior')">Sub-Junior / Kids</button>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="program-card">
+                    <div class="card-icon-wrapper"><i class="fa-solid fa-scroll"></i></div>
+                    <div class="program-title">Kadaprasangam</div>
+                    <button class="btn btn-level" onclick="downloadPdf('Kadaprasangam', 'Senior')">Senior</button>
+                    <button class="btn btn-level" onclick="downloadPdf('Kadaprasangam', 'Junior')">Junior</button>
+                    <button class="btn btn-level" onclick="downloadPdf('Kadaprasangam', 'Sub-Junior')">Sub-Junior / Kids</button>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="program-card">
+                    <div class="card-icon-wrapper"><i class="fa-solid fa-circle-question"></i></div>
+                    <div class="program-title">Quiz</div>
+                    <button class="btn btn-level" onclick="downloadPdf('Quiz', 'Senior')">Senior</button>
+                    <button class="btn btn-level" onclick="downloadPdf('Quiz', 'Junior')">Junior</button>
+                    <button class="btn btn-level" onclick="downloadPdf('Quiz', 'Sub-Junior')">Sub-Junior / Kids</button>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="program-card">
+                    <div class="card-icon-wrapper"><i class="fa-solid fa-feather-pointed"></i></div>
+                    <div class="program-title">Poetry</div>
+                    <button class="btn btn-level" onclick="downloadPdf('Poetry', 'Senior')">Senior</button>
+                    <button class="btn btn-level" onclick="downloadPdf('Poetry', 'Junior')">Junior</button>
+                    <button class="btn btn-level" onclick="downloadPdf('Poetry', 'Sub-Junior')">Sub-Junior / Kids</button>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="program-card">
+                    <div class="card-icon-wrapper"><i class="fa-solid fa-book-bookmark"></i></div>
+                    <div class="program-title">Exhibition Guide</div>
+                    <button class="btn btn-level" onclick="downloadPdf('Exhibition', 'Senior')">Senior</button>
+                    <button class="btn btn-level" onclick="downloadPdf('Exhibition', 'Junior')">Junior</button>
+                    <button class="btn btn-level" onclick="downloadPdf('Exhibition', 'Sub-Junior')">Sub-Junior / Kids</button>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="program-card">
+                    <div class="card-icon-wrapper"><i class="fa-solid fa-pen-nib"></i></div>
+                    <div class="program-title">Essay Writing</div>
+                    <button class="btn btn-level" onclick="downloadPdf('Essay', 'Senior')">Senior</button>
+                    <button class="btn btn-level" onclick="downloadPdf('Essay', 'Junior')">Junior</button>
+                    <button class="btn btn-level" onclick="downloadPdf('Essay', 'Sub-Junior')">Sub-Junior / Kids</button>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="program-card">
+                    <div class="card-icon-wrapper"><i class="fa-solid fa-pencil"></i></div>
+                    <div class="program-title">Pencil Drawing</div>
+                    <button class="btn btn-level" onclick="downloadPdf('Drawing', 'Senior')">Senior</button>
+                    <button class="btn btn-level" onclick="downloadPdf('Drawing', 'Junior')">Junior</button>
+                    <button class="btn btn-level" onclick="downloadPdf('Drawing', 'Sub-Junior')">Sub-Junior / Kids</button>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="program-card">
+                    <div class="card-icon-wrapper"><i class="fa-solid fa-palette"></i></div>
+                    <div class="program-title">Poster Making</div>
+                    <button class="btn btn-level" onclick="downloadPdf('Poster', 'Senior')">Senior</button>
+                    <button class="btn btn-level" onclick="downloadPdf('Poster', 'Junior')">Junior</button>
+                    <button class="btn btn-level" onclick="downloadPdf('Poster', 'Sub-Junior')">Sub-Junior / Kids</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="hearing-section" class="container">
+        <div class="hearing-card text-center">
+            <div class="hearing-icon"><i class="fa-solid fa-circle-play"></i></div>
+            <h3 class="fw-bold">Meelad Hearing Section</h3>
+            <p class="text-white-50">Listen to the latest Meelad Nasheeds and speeches directly from the cloud drive.</p>
+            
+            <audio id="meeladAudio" controls class="w-100 audio-player">
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            <p class="small text-white-50 mt-2">Sample audio player – replace with your own file.</p>
+        </div>
+    </section>
+
+    <section id="ads-section" class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Sponsors & Businesses</h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="ad-card">
+                    
+                    <img src="Network-Topology-Projects.png" width="280px" alt="">
+                  
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="ad-card">
+                    <div class="ad-title">Muktha Mart</div>
+                    <p class="ad-desc">Premium e-commerce and retail items sourced wholesale.</p>
+                    <a href="mailto:connect.sakheerpa@gmail.com" class="btn btn-sm btn-outline-success">Connect</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="ad-card">
+                    <div class="ad-title">Shor Fragrance</div>
+                    <p class="ad-desc">Exclusive perfumes, attars, and luxury natural scents.</p>
+                    <a href="mailto:connect.sakheerpa@gmail.com" class="btn btn-sm btn-outline-success">Connect</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="ad-card">
+                    <div class="ad-title">Mind Power Wellness</div>
+                    <p class="ad-desc">Guidance on mental health, wellness, and human chemistry.</p>
+                    <a href="mailto:connect.sakheerpa@gmail.com" class="btn btn-sm btn-outline-success">Connect</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="ad-card">
+                    <div class="ad-title">Tech Solutions</div>
+                    <p class="ad-desc">Full-stack web development and user-interface design.</p>
+                    <a href="mailto:connect.sakheerpa@gmail.com" class="btn btn-sm btn-outline-success">Connect</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="ad-card">
+                    <div class="ad-title">Creative Hub</div>
+                    <p class="ad-desc">Graphic design, print materials, and branding solutions.</p>
+                    <a href="mailto:connect.sakheerpa@gmail.com" class="btn btn-sm btn-outline-success">Connect</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="ad-card">
+                    <div class="ad-title">Travel Desk</div>
+                    <p class="ad-desc">Global travel bookings and corporate management.</p>
+                    <a href="mailto:connect.sakheerpa@gmail.com" class="btn btn-sm btn-outline-success">Connect</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="ad-card">
+                    <div class="ad-title">Interior Solutions</div>
+                    <p class="ad-desc">Custom interior design and creative modern modifications.</p>
+                    <a href="mailto:connect.sakheerpa@gmail.com" class="btn btn-sm btn-outline-success">Connect</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="ad-card">
+                    <div class="ad-title">Student Support</div>
+                    <p class="ad-desc">Online tutoring, educational notes, and learning resources.</p>
+                    <a href="mailto:connect.sakheerpa@gmail.com" class="btn btn-sm btn-outline-success">Connect</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="donation-section" class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center p-4 p-md-5" style="background: linear-gradient(135deg, #0d4732 0%, #05140e 100%); border: 1px solid rgba(197, 155, 39, 0.2); border-radius: 18px; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);">
+                    <h3 class="fw-bold text-white mb-3">Support & Donate</h3>
+                    <p class="text-white-50 mb-4 px-lg-4" style="font-size: 0.95rem;">
+                        Your generous contributions help us maintain the servers, curate study materials, and expand services to more students.
+                    </p>
+                    
+                    <div class="row align-items-center g-4">
+                        <div class="col-md-6 text-center">
+                            <div class="p-3 bg-white rounded-3 mx-auto" style="max-width: 220px; box-shadow: 0 10px 25px rgba(0,0,0,0.15);">
+                                <img src="download.png" alt="Donation QR Code" class="img-fluid rounded" style="width: 200px; height: 200px; object-fit: cover;">
+                            </div>
+                            <p class="text-white-50 small mt-3 mb-0">Scan the QR Code to support our mission</p>
+                        </div>
+                        
+                        <div class="col-md-6 text-md-start text-center">
+                            <h5 class="fw-bold mb-3" style="color: var(--accent-gold, #c59b27);">Payment Information</h5>
+                            <ul class="list-unstyled text-white-50 d-flex flex-column gap-2" style="font-size: 0.9rem;">
+                                <li>
+                                    <i class="fa-solid fa-building-columns me-2 text-success"></i> 
+                                    <strong>Bank Name:</strong> Federal Bank / SBI
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-hashtag me-2 text-success"></i> 
+                                    <strong>Account Number:</strong> 123456789012
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-id-card me-2 text-success"></i> 
+                                    <strong>IFSC Code:</strong> FDRL0001234
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-wallet me-2 text-success"></i> 
+                                    <strong>UPI ID:</strong> <code>connect.sakheerpa@okbank</code>
+                                </li>
+                            </ul>
+                            
+                            <a href="mailto:connect.sakheerpa@gmail.com" class="btn btn-sm mt-3 px-4 py-2 fw-bold rounded-pill" style="background-color: var(--accent-gold, #c59b27); color: #05140e;">
+                                <i class="fa-solid fa-envelope me-1"></i> Confirm Payment
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+<footer>
+        <div class="container">
+            <div class="row g-4 mb-4 justify-content-between">
+                <div class="col-lg-4 text-lg-start text-center">
+                    <a class="navbar-brand fs-4 text-white" href="#" style="font-weight: 800; text-decoration: none;">
+                        <i class="fa-solid fa-moon me-2" style="color: var(--accent-gold);"></i>Meelad<span style="color: var(--accent-gold);">Special</span>
+                    </a>
+                    <p class="mt-3 pe-lg-4" style="font-size: 0.9rem;">
+                        Empowering the student community through quality resources, digital Islamic guides, and professional learning solutions.
+                    </p>
+                </div>
+
+                <div class="col-lg-2 col-md-4 text-md-start text-center">
+                    <h5 class="text-uppercase fw-bold mb-3" style="color: var(--accent-gold); font-size: 0.95rem;">Navigation</h5>
+                    <ul class="list-unstyled footer-links d-flex flex-column gap-2">
+                        <li><a href="#programs-section" class="text-white-50"><i class="fa-solid fa-chevron-right me-1 small"></i> Programs</a></li>
+                        <li><a href="#hearing-section" class="text-white-50"><i class="fa-solid fa-chevron-right me-1 small"></i> Hearing</a></li>
+                        <li><a href="#ads-section" class="text-white-50"><i class="fa-solid fa-chevron-right me-1 small"></i> Sponsors</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-4 text-md-start text-center">
+                    <h5 class="text-uppercase fw-bold mb-3" style="color: var(--accent-gold); font-size: 0.95rem;">Contact Info</h5>
+                    <ul class="list-unstyled text-white-50 d-flex flex-column gap-2" style="font-size: 0.85rem;">
+                        <li>
+                            <i class="fa-solid fa-envelope me-2" style="color: var(--light-green);"></i> 
+                            <a href="mailto:connect.sakheerpa@gmail.com" class="text-white-50">connect.sakheerpa@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone me-2" style="color: var(--light-green);"></i> 
+                            <a href="tel:+919876543210" class="text-white-50">+91 98765 43210</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-location-dot me-2" style="color: var(--light-green);"></i> 
+                            Bangalore, India
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-4 text-md-start text-center">
+                    <h5 class="text-uppercase fw-bold mb-3" style="color: var(--accent-gold); font-size: 0.95rem;">Newsletter & Socials</h5>
+                    <div class="d-flex justify-content-md-start justify-content-center gap-3 mb-3">
+                        <a href="https://instagram.com" target="_blank" class="text-white fs-5" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" class="text-white fs-5" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" class="text-white fs-5" aria-label="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="https://wa.me/919876543210" target="_blank" class="text-white fs-5" aria-label="WhatsApp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                    <form class="d-flex" onsubmit="event.preventDefault(); alert('Subscribed to updates!');">
+                        <input type="email" class="form-control form-control-sm bg-dark text-white border-secondary" placeholder="Updates via email" required style="border-top-right-radius: 0; border-bottom-right-radius: 0;">
+                        <button class="btn btn-sm" style="background-color: var(--accent-gold); color: var(--primary-dark); font-weight: 600; border-top-left-radius: 0; border-bottom-left-radius: 0;" type="submit">Join</button>
+                    </form>
+                </div>
+            </div>
+
+            <hr class="border-secondary my-4">
+
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center gap-2">
+                <p class="mb-0 small">&copy; 2026 Meelad Special. All Rights Reserved.</p>
+                <div class="d-flex gap-3 small">
+                    <a href="mailto:connect.sakheerpa@gmail.com" class="text-decoration-none text-white-50">Privacy Policy</a>
+                    <a href="mailto:connect.sakheerpa@gmail.com" class="text-decoration-none text-white-50">Terms of Service</a>
+                </div>
+                <a href="#" class="text-decoration-none small" style="color: var(--accent-gold);" aria-label="Back to top">
+                    Back to Top <i class="fa-solid fa-circle-chevron-up ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
